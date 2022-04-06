@@ -5,6 +5,15 @@ import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {HttpClientModule} from "@angular/common/http";
 import {MatSliderModule} from '@angular/material/slider';
+import {DataClientService} from "./dataClient.service";
+import {MatSelectModule} from "@angular/material/select";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatIconModule} from "@angular/material/icon";
+import {MatInputModule} from "@angular/material/input";
+import {MatNativeDateModule} from "@angular/material/core";
+import {DatePipe} from "@angular/common";
 
 @NgModule({
   declarations: [
@@ -14,9 +23,16 @@ import {MatSliderModule} from '@angular/material/slider';
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,
-    HttpClientModule
+    HttpClientModule,
+    MatSelectModule,
+    MatTableModule,
+    MatSortModule,
+    MatDatepickerModule,
+    MatIconModule,
+    MatInputModule,
+    MatNativeDateModule,
   ],
-  providers: [],
+  providers: [DataClientService, DatePipe],
   bootstrap: [AppComponent]
 })
 export class AppModule {

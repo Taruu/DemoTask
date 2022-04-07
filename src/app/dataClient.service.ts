@@ -14,7 +14,6 @@ export class DataClientService {
   apiEndpoint = environment.apiEndpoint;
 
   public getListElctricityMeters(): Observable<ElectricityMeter[]> {
-    console.log(this.apiEndpoint + "/ElectricityMeter")
     return this.http.get<ElectricityMeter[]>(this.apiEndpoint + "/ElectricityMeter");
   }
 

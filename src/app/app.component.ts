@@ -11,8 +11,8 @@ import {Observable} from "rxjs";
 export class AppComponent implements OnInit {
   constructor(private dataClientService: DataClientService) {
   }
-
   title = 'DemoTask';
+
   displayedColumns: string[] = ['startDate', 'activeReceiveMean', 'activeOutputMean', 'reactiveReceiveMean', 'reactiveOutputMean']
   listElctricityMeter: ElectricityMeter[] = [];
   takedElectricityCountId: number = 0;
@@ -49,14 +49,14 @@ export class AppComponent implements OnInit {
     this.tableValues.sort(function (a, b) {
       return a.startDate.getTime() - b.startDate.getTime()
     });
-    console.log(this.tableValues)
+
   }
 
   private calculateMeanValue(listArray: ElectricityValue[], key: "activeReceive" | "activeOutput" | "reactiveReceive" | "reactiveOutput") {
     let sumactiveReceive: number = listArray.reduce(function (accumulator: number, currentValue: ElectricityValue, index: number, array: ElectricityValue[]) {
       return accumulator + currentValue[key];
     }, 0);
-    return sumactiveReceive / listArray.length;
+    return Number((sumactiveReceive / listArray.length).toFixed(3));
   }
 
   ngChangeDateElctricityMeter(event: any) {

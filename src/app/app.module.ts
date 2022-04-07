@@ -14,12 +14,16 @@ import {MatIconModule} from "@angular/material/icon";
 import {MatInputModule} from "@angular/material/input";
 import {MatNativeDateModule} from "@angular/material/core";
 import {DatePipe} from "@angular/common";
+import {MatMomentDateModule} from "@angular/material-moment-adapter";
+
+
 
 @NgModule({
   declarations: [
     AppComponent
   ],
   imports: [
+    MatMomentDateModule,
     BrowserModule,
     BrowserAnimationsModule,
     MatSliderModule,

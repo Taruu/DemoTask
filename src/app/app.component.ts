@@ -1,7 +1,5 @@
 import {Component, OnInit} from '@angular/core';
 import {DataClientService, ElectricityMeter, ElectricityMeterValues, ElectricityValue} from "./dataClient.service";
-import {Observable} from "rxjs";
-
 
 @Component({
   selector: 'app-root',
@@ -11,6 +9,7 @@ import {Observable} from "rxjs";
 export class AppComponent implements OnInit {
   constructor(private dataClientService: DataClientService) {
   }
+
   title = 'DemoTask';
 
   displayedColumns: string[] = ['startDate', 'activeReceiveMean', 'activeOutputMean', 'reactiveReceiveMean', 'reactiveOutputMean']
@@ -22,6 +21,7 @@ export class AppComponent implements OnInit {
   nowDate: Date = new Date();
   maxDate: Date = new Date();
   minDate: Date = new Date();
+
 
 
   ngOnInit() {
